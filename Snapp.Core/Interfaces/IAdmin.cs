@@ -7,111 +7,124 @@ namespace Snapp.Core.Interfaces
 	{
 		#region Car
 
-		Task<List<Car>> GetCars();
+		    Task<List<Car>> GetCars();
 
-		Task<Car> GetCarById(Guid id);
+		    Task<Car> GetCarById(Guid id);
 
-		void AddCar(CarViewModel viewModel);
+		    void AddCar(CarViewModel viewModel);
 
-		bool UpdateCar(Guid id, CarViewModel viewModel);
+		    bool UpdateCar(Guid id, CarViewModel viewModel);
 
-		void DeleteCar(Guid id);
+		    void DeleteCar(Guid id);
 
 		#endregion
 
 		#region Color
 
-		Task<List<Color>> GetColors();
+		    Task<List<Color>> GetColors();
 
-		Task<Color> GetColorsById(Guid id);
+		    Task<Color> GetColorsById(Guid id);
 
-		void AddColor(ColorViewModel viewModel);
+		    void AddColor(ColorViewModel viewModel);
 
-		bool UpdateColor(Guid id, ColorViewModel viewModel);
+		    bool UpdateColor(Guid id, ColorViewModel viewModel);
 
-		void DeleteColor(Guid id);
+		    void DeleteColor(Guid id);
 
 		#endregion
 
 		#region RateType
 
-		Task<List<RateType>> GetRateTypes();
+		    Task<List<RateType>> GetRateTypes();
 
-		Task<RateType> GetRateTypesById(Guid id);
+		    Task<RateType> GetRateTypesById(Guid id);
 
-		void AddRateType(RateTypeViewModel viewModel);
+		    void AddRateType(RateTypeViewModel viewModel);
 
-		bool UpdateRateType(Guid id, RateTypeViewModel viewModel);
+		    bool UpdateRateType(Guid id, RateTypeViewModel viewModel);
 
-		void DeleteRateType(Guid id);
+		    void DeleteRateType(Guid id);
 
 		#endregion
 
 		#region Setting
 
-		Task<Setting> GetSetting();
+		    Task<Setting> GetSetting();
 
-		bool UpdateSiteSetting(SiteSettingViewModel viewModel);
-		bool UpdatePriceSetting(PriceSettingViewModel viewModel);
-		bool UpdateAboutSetting(AboutSettingViewModel viewModel);
-		bool UpdateTermsSetting(TermsSettingViewModel viewModel);
+		    bool UpdateSiteSetting(SiteSettingViewModel viewModel);
+		    bool UpdatePriceSetting(PriceSettingViewModel viewModel);
+		    bool UpdateAboutSetting(AboutSettingViewModel viewModel);
+		    bool UpdateTermsSetting(TermsSettingViewModel viewModel);
 
 		#endregion
 
 		#region PriceType
 
-		Task<List<PriceType>> GetPriceTypes();
+		    Task<List<PriceType>> GetPriceTypes();
 
-		Task<PriceType> GetPriceTypesById(Guid id);
+		    Task<PriceType> GetPriceTypesById(Guid id);
 
-		void AddPriceType(PriceTypeViewModel viewModel);
+		    void AddPriceType(PriceTypeViewModel viewModel);
 
-		bool UpdatePriceType(Guid id, PriceTypeViewModel viewModel);
+		    bool UpdatePriceType(Guid id, PriceTypeViewModel viewModel);
 
-		void DeletePriceType(Guid id);
+		    void DeletePriceType(Guid id);
 
 		#endregion
 
         #region MonthType
 
-        Task<List<MonthType>> GetMonthTypes();
+            Task<List<MonthType>> GetMonthTypes();
 
-        Task<MonthType> GetMonthTypesById(Guid id);
+            Task<MonthType> GetMonthTypesById(Guid id);
 
-        void AddMonthType(MonthTypeViewModel viewModel);
+            void AddMonthType(MonthTypeViewModel viewModel);
 
-        bool UpdateMonthType(Guid id, MonthTypeViewModel viewModel);
+            bool UpdateMonthType(Guid id, MonthTypeViewModel viewModel);
 
-        void DeleteMonthType(Guid id);
+            void DeleteMonthType(Guid id);
 
 		#endregion
 
 		#region Humidity
 
-		Task<List<Humidity>> GetHumidities();
+		    Task<List<Humidity>> GetHumidities();
 
-		Task<Humidity> GetHumiditiesById(Guid id);
+		    Task<Humidity> GetHumiditiesById(Guid id);
 
-		void AddHumidity(MonthTypeViewModel viewModel);
+		    void AddHumidity(MonthTypeViewModel viewModel);
 
-		bool UpdateHumidity(Guid id, MonthTypeViewModel viewModel);
+		    bool UpdateHumidity(Guid id, MonthTypeViewModel viewModel);
 
-		void DeleteHumidity(Guid id);
+		    void DeleteHumidity(Guid id);
 
 		#endregion
 
 		#region Temprature
 
-		Task<List<Temperature>> GetTemperatures();
+		    Task<List<Temperature>> GetTemperatures();
 
-		Task<Temperature> GetTemperaturesById(Guid id);
+		    Task<Temperature> GetTemperaturesById(Guid id);
 
-		void AddTemperature(MonthTypeViewModel viewModel);
+		    void AddTemperature(MonthTypeViewModel viewModel);
 
-		bool UpdateTemperature(Guid id, MonthTypeViewModel viewModel);
+		    bool UpdateTemperature(Guid id, MonthTypeViewModel viewModel);
 
-		void DeleteTemperature(Guid id);
+		    void DeleteTemperature(Guid id);
 
 		#endregion
-	}
+
+        #region Role
+		    Task<List<Role>> GetRoles();
+
+		    Task<Role> GetRolesById(Guid id);
+
+		    void AddRole(RoleViewModel viewModel);
+
+            bool UpdateRole(Guid id, RoleViewModel viewModel);
+
+		    void DeleteRole(Guid id);
+        #endregion
+
+    }
 }
