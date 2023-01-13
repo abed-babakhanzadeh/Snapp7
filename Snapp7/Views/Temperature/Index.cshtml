@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Snapp.DataAccessLayer.Entities.Temperature>
+
+@{
+	ViewData["Title"] = "نمایش تعرفه های دمای هوا";
+	Layout = "~/Views/Shared/_dashboardLayout.cshtml";
+}
+
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="header">
+				<h4 class="title pull-right">تعرفه های دمای هوا</h4>
+				<h4 class="title pull-left">
+					@* <a href="/Car/Create" class="btn btn-success">جدید</a>*@
+					<a asp-controller="Temperature" asp-action="Create" class="btn btn-success">جدید</a>
+				</h4>
+				<div class="clearfix"></div>
+				<br />
+				<input type="text" class="form-control" placeholder="جستجو ..." id="mySearch" />
+			</div>
+			<div class="content table-responsive table-full-width">
+				<table class="table table-hover table-striped">
+					<thead>
+						<tr>
+							<th>
+								@Html.DisplayNameFor(model => model.Name)
+							</th>
+
+							<th>
+								@Html.DisplayNameFor(model => model.Start)
+							</th>
+
+							<th>
+								@Html.DisplayNameFor(model => model.End)
+							</th>
+
+							<th>
+								@Html.DisplayNameFor(model => model.Percent)
+							</th>
+
+							<th class="pull-left">عملیات</th>
+						</tr>
+					</thead>
+					<tbody id="myTable">
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>
+									@Html.DisplayFor(model => item.Name)
+								</td>
+
+								<td>
+									@Html.DisplayFor(model => item.Start)
+								</td>
+
+								<td>
+									@Html.DisplayFor(model => item.End)
+								</td>
+
+								<td>
+									@Html.DisplayFor(model => item.Percent)
+								</td>
+
+
+								@*<td asp-for="Name" />*@
+
+								<td class="pull-left">
+									@* <a href="/Car/Edit/@item.Id" class="btn btn-xs btn-warning">*@
+									<a asp-controller="Temperature" asp-action="Edit" asp-route-id=@item.Id class="btn btn-xs btn-warning">
+										<i class="fa fa-edit"></i>
+									</a>
+									<a href="#" onclick="myDelete('@item.Id')" class="btn btn-xs btn-danger">
+										@*<a asp-controller="PriceType" asp-action="Delete" asp-route-id=@item.Id class="btn btn-xs btn-danger">*@
+										<i class="fa fa-trash"></i>
+									</a>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+@section mySection
+	{
+
+	@{
+		await Html.RenderPartialAsync("_DeletePartialView");
+	}
+	<script>
+		function myDelete(id) {
+			swal({
+				title: "تایید حذف",
+				text: "آیا از حذف این مقدار اطمینان دارید؟",
+				icon: "warning",
+				buttons: ['لغو', 'بله'],
+				dangerMode: true,
+			})
+				.then((willDelete) => {
+					if (willDelete) {
+						window.open('/Temperature/Delete/' + id, '_parent');
+						//swal("Poof! Your imaginary file has been deleted!", {
+						//	icon: "success",
+						//});
+					}
+					//else {
+					//	swal("Your imaginary file is safe!");
+					//}
+				});
+		}
+	</script>
+}
+
+
+
