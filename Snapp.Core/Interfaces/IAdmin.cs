@@ -126,5 +126,25 @@ namespace Snapp.Core.Interfaces
 		    void DeleteRole(Guid id);
         #endregion
 
+        #region User
+
+		    string GetRoleId(Guid id);
+
+            bool CheckUsername(string username);
+          
+		    void AddUser(UserViewModel viewModel);
+
+			Task<List<User>> GetUsers();
+
+			void DeleteUser(Guid id);
+
+			void AddDriver(Guid id);
+
+			void DeleteDriver(Guid id);
+
+			bool UpdateUser(Guid id, UserViewModel viewModel);
+
+        #endregion
+
     }
 }
