@@ -619,7 +619,7 @@ namespace Snapp.Core.Services
 
 		public bool UpdateUser(Guid id, UserViewModel viewModel)
 		{
-			User user = _context.Users.Find(id); 
+			User user = _context.Users.Find(id);
 			if (user != null)
 			{
 				user.RoleId = viewModel.RoleId;
